@@ -35,6 +35,29 @@
       echo "<p class ='calc-error'> Fill in all fields! </p>";
       $errors = true;
     }
+
+    if (!is_numeric($num01) || !is_numeric($num02)) {
+      echo "<p class ='calc-error'> Numbers only! </p>";
+      $errors = true;
+    }
+
+    // Calculate numbers if no errors exist
+    if (!$errors) {
+      switch ($operator) {
+        case "add": 
+          $value = $num01 + $num02;
+          break;
+        case "subtract": 
+          $value = $num01 - $num02;
+          break;
+        case "multiply": 
+          $value = $num01 * $num02;
+          break;
+        case "divide": 
+          $value = $num01 / $num02;
+          break;
+      }
+    }
   }
   ?>
 
