@@ -29,6 +29,12 @@
     $operator = htmlspecialchars($_POST["operator"]);
 
     // error handlers
+    $errors = false;
+
+    if (empty($num01) || empty($num02) || empty($operator)) {
+      echo "<p class ='calc-error'> Fill in all fields! </p>";
+      $errors = true;
+    }
   }
   ?>
 
