@@ -7,7 +7,7 @@
 </head>
 <body>
   
-  <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ; ?>" method="get">
+  <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ; ?>" method="POST">
     <input type="number" name="num01" 
     placeholder="number one">  
     <select name="operator">
@@ -20,6 +20,14 @@
     placeholder="number two">
     <button>Calculate</button>
   </form>
+
+  <?php 
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $num01 = filter_input(INPUT_POST, "num01", FILTER_SANITIZE_NUMBER_FLOAT);
+    $num02 = filter_input(INPUT_POST, "num02", FILTER_SANITIZE_NUMBER_FLOAT);
+    $operator = htmlspecialchars($_POST["operator"]);
+  }
+  ?>
 
 </body>
 </html>
