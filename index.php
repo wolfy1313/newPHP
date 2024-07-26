@@ -17,7 +17,8 @@
       <option value="divide">/</option>
     </select>
     <input type="number" name="num02" 
-    placeholder="number two">  
+    placeholder="number two">
+    <button>Calculate</button>
   </form>
 
 </body>
