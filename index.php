@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Calculator</title>
 </head>
 <body>
   
@@ -43,6 +43,8 @@
 
     // Calculate numbers if no errors exist
     if (!$errors) {
+      $value = 0;
+
       switch ($operator) {
         case "add": 
           $value = $num01 + $num02;
@@ -54,9 +56,14 @@
           $value = $num01 * $num02;
           break;
         case "divide": 
-          $value = $num01 / $num02;
+          $value = round($num01 / $num02, 2);
           break;
+        default:
+        echo "<p class ='calc-error'> Something has gone very very wrong. </p>";
       }
+
+      echo "<p class='calc-result'>Result = " . $value . "</p>";
+
     }
   }
   ?>
